@@ -1,0 +1,85 @@
+/* General Styles */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.logo {
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+}
+
+.title {
+    text-align: center;
+    color: #0077cc;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Chat Box */
+.chat-box {
+    height: 300px;
+    overflow-y: scroll;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    background-color: #eaeaea;
+}
+
+/* User Messages */
+.message {
+    padding: 8px 15px;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    width: fit-content;
+}
+
+.user-message {
+    background-color: #0077cc;
+    color: white;
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: #ddd;
+}
+
+/* Input and Button */
+input[type="text"] {
+    width: calc(100% - 90px);
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    outline: none;
+}
+
+button {
+    width: 100px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Utility Classes */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
