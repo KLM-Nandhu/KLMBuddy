@@ -8,12 +8,13 @@
 </head>
 <body>
     <img src="./logo.jpg" alt="Company Logo" class="logo">
-
     <h1 class="title">KLM BUDDY</h1>
     <div class="chat-container">
-        <div class="chat-box" id="chat-box"></div>
-        <input type="text" id="user-input" placeholder="Type Your Queries...">
-        <button onclick="sendMessage()">Send</button>
+        <form id="chat-form" onsubmit="sendMessage(); return false;">
+            <div class="chat-box" id="chat-box"></div>
+            <input type="text" id="user-input" placeholder="Type Your Queries...">
+            <button type="submit">Send</button>
+        </form>
     </div>
     <script src="script.js"></script>
 </body>
