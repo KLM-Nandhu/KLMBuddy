@@ -16,6 +16,22 @@
             <button type="submit">Send</button>
         </form>
     </div>
-    <script src="script.js"></script>
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<p>User: ${userInput}</p>`;
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userInput })
+            });
+            const data = await response.json();
+            chatBox.innerHTML += `<p>Bot: ${data.response}</p>`;
+            document.getElementById('user-input').value = '';
+        }
+    </script>
 </body>
 </html>
