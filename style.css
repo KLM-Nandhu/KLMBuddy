@@ -1,87 +1,53 @@
-/* General Styles */
-body, html {
+body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
-    display: block;
-    margin: 10px auto;
     width: 100px;
+    margin-top: 20px;
 }
 
 .title {
-    text-align: center;
-    color: #0077cc;
-    font-family: sans-serif;
+    font-size: 24px;
+    margin-top: 10px;
 }
 
-/* Chat Container */
 .chat-container {
-    width: 90%;
-    max-width: 600px;
+    width: 300px;
     background-color: #fff;
-    margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-/* Chat Box */
 .chat-box {
     height: 300px;
-    overflow-y: scroll;
-    padding: 15px;
-    border-bottom: 1px solid #ccc;
-    background-color: #eaeaea;
-}
-
-/* User Messages */
-.message {
-    padding: 8px 15px;
-    border-radius: 15px;
-    margin-bottom: 8px;
-    width: fit-content;
-}
-
-.user-message {
-    background-color: #0077cc;
-    color: white;
-    margin-left: auto;
-}
-
-.bot-message {
-    background-color: #ddd;
-}
-
-/* Input and Button */
-input[type="text"] {
-    width: calc(100% - 90px);
+    overflow-y: auto;
+    border: 1px solid #ccc;
     padding: 10px;
-    border: none;
-    border-top: 1px solid #ccc;
-    outline: none;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    width: calc(100% - 60px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button {
-    height: 20px;
-    width: 100px;
-    background-color: #0077cc;
-    color: white;
+    padding: 10px 20px;
     border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #005fa3;
-}
-
-/* Utility Classes */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
 }
