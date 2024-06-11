@@ -4,34 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <img src="./logo.jpg" alt="Company Logo" class="logo">
     <h1 class="title">KLM BUDDY</h1>
-    <div class="chat-container">
-        <form id="chat-form" onsubmit="sendMessage(); return false;">
-            <div class="chat-box" id="chat-box"></div>
-            <input type="text" id="user-input" placeholder="Type Your Queries...">
-            <button type="submit">Send</button>
-        </form>
+    <button id="history-button" onclick="toggleSidebar()">Chat History</button>
+    <div class="main-container">
+        <div class="chat-container" id="chat-container">
+            <form id="chat-form" onsubmit="sendMessage(); return false;">
+                <div class="chat-box" id="chat-box"></div>
+                <input type="text" id="user-input" placeholder="Type Your Queries..." onkeypress="handleKeyPress(event)">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Previous Chats</h2>
+                <button onclick="toggleSidebar()"><<</button>
+            </div>
+            <div class="chat-history" id="chat-history"></div>
+            <button id="new-chat-button" onclick="startNewChat()">New Chat</button>
+        </div>
     </div>
-    <script>
-        async function sendMessage() {
-            const userInput = document.getElementById('user-input').value;
-            const chatBox = document.getElementById('chat-box');
-            chatBox.innerHTML += `<p>User: ${userInput}</p>`;
-            const response = await fetch('/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message: userInput })
-            });
-            const data = await response.json();
-            chatBox.innerHTML += `<p>Bot: ${data.response}</p>`;
-            document.getElementById('user-input').value = '';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
