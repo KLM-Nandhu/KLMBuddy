@@ -7,9 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <img src="./logo.jpg" alt="Company Logo" class="logo">
+    <a href="https://www.klmsolutions.in" target="_blank">
+        <img src="./logo.jpg" alt="Company Logo" class="logo">
+    </a>
     <h1 class="title">KLM BUDDY</h1>
     <button id="history-button" onclick="toggleSidebar()">Chat History</button>
+    <button id="reset-button" onclick="resetChat()">Reset</button>
+    <button id="attach-files-button" onclick="document.getElementById('attach-files-input').click()">Attach Files</button>
+    <input type="file" id="attach-files-input" multiple style="display:none" onchange="handleFileUpload(event)">
+    <button id="attach-metadata-button" onclick="document.getElementById('attach-metadata-input').click()">Attach Metadata</button>
+    <input type="file" id="attach-metadata-input" style="display:none" onchange="handleMetadataUpload(event)">
+
+    <div class="upload-section">
+        <div id="uploaded-files-container" class="uploaded-container" style="display:none;">
+            <h3>Uploaded Files</h3>
+            <ul id="uploaded-files-list"></ul>
+            <div id="file-pagination" class="pagination" style="display:none;"></div>
+        </div>
+        <div id="uploaded-metadata-container" class="uploaded-container" style="display:none;">
+            <h3>Uploaded Metadata Files</h3>
+            <ul id="uploaded-metadata-list"></ul>
+            <div id="metadata-pagination" class="pagination" style="display:none;"></div>
+        </div>
+    </div>
+
     <div class="main-container">
         <div class="chat-container" id="chat-container">
             <form id="chat-form" onsubmit="sendMessage(); return false;">
